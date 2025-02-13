@@ -1,0 +1,28 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "a web application that takes a long URL and generates a shorter, unique URL that redirects users to the original link when visited.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostafa-mahmood/Url-Shortener.git"
+  },
+  "author": "mostafa-mahmood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mostafa-mahmood/Url-Shortener/issues"
+  },
+  "homepage": "https://github.com/mostafa-mahmood/Url-Shortener#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
