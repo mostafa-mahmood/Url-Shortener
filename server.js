@@ -1,21 +1,27 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
+const shortenRouter = require('./shorten');
+const redirectRouter = require('./redirect');
 
-
-(async function connectDb(){
+async function connectDb(){
           try{
                     await mongoose.connect(process.env.MONGO_URI);
                     console.log("Connected to DB");
           } catch(err){
                     console.error(`Error Connecting to DB: ${err}`);
+                    process.exit(1);
           }
-})();
+};
 
+connectDb();
 
+app.use(express.json());
 
+app.use('/', shortenRouter);
 
-
+app.use('/', redirectRouter);
 
 
 const PORT = process.env.PORT || 3000;
