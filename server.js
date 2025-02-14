@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const shortenRouter = require('./shorten');
 const redirectRouter = require('./redirect');
 
@@ -16,6 +17,8 @@ async function connectDb(){
 };
 
 connectDb();
+
+app.use(cors());
 
 app.use(express.json());
 
